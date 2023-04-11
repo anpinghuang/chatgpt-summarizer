@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Article Summarizer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .display-stuff {
+        background-color: #313744;
+        color: white;
+        display: inline-block;
+        width: 50%;
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      .body-control {
+        background-color: #212121;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      h1 {
+        padding-top: 10px;
+        color: white;
+        font-family: monospace;
+      }
+      label {
+        color: white;
+        padding-bottom: 10px;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body class="body-control">
+    <center>
+      <h1>Article Summarizer</h1>
+      <form action="/summarize" method="POST">
+        <label for="article">Enter your article:</label><br>
+        <textarea id="article" name="article" rows="10" cols="80"></textarea><br><br>
+        <button class="btn btn-success" type="submit" value="Summarize">Summarize!</button>
+      </form>
+      <div class="display-stuff" style="visibility: {{display_stuff_please}};">
+          <p>{{summary}}</p>
+      </div>
+    </center>
+  </body>
+</html>
